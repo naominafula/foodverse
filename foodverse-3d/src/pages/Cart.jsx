@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Trash2, Minus, Plus, ShoppingBag } from "lucide-react";
 
@@ -9,7 +10,10 @@ function Cart() {
     removeFromCart,
     updateQuantity,
     total
+    
   } = useCart();
+
+  const navigate = useNavigate();
 
   return (
     <section className="cart-page">
@@ -73,15 +77,12 @@ function Cart() {
 
                   </div>
                 </div>
-
-                <button
-                  className="remove-button"
-                  onClick={() => removeFromCart(item.id)}
-                  aria-label={`Remove ${item.name}`}
-                >
-                  <Trash2 size={20} />
-                </button>
-
+       <button
+           className="checkout-button"
+           onClick={() => navigate("/checkout")}
+>
+           Proceed to Checkout
+         </button>
               </div>
 
             ))}

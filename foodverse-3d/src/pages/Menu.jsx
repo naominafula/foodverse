@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
 import FoodCard from "../components/FoodCard";
 import foods from "../data/foods";
 
 function Menu() {
+  const location = useLocation();
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("All");
 
-  const categories = [
-    "All",
-    "Breakfast",
-    "Lunch",
-    "Dinner",
-    "Fast Food",
-    "Drinks",
-    "Desserts"
-  ];
+  const categories = useMemo(
+    () => ["All", "Breakfast", "Lunch", "Dinner", "Fast Food", "Snacks", "Drinks", "Desserts"],
+    []
+  );
+
+  const initialCategory = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    const selectedCategory = params.get("category");
+    return categories.includes(selectedCategory) ? selectedCategory : "All";
+  }, [location.search, categories]);
+
+  const [category, setCategory] = useState(initialCategory);
+
+  useEffect(() => {
+    setCategory(initialCategory);
+  }, [initialCategory]);
 
   const filteredFoods = foods.filter((food) => {
     const matchesSearch =

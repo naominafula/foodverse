@@ -1036,3 +1036,192 @@ button {
   border-radius: 15px;
   overflow: hidden;
 }
+
+
+/* FOODVERSE CHECKOUT */
+
+.checkout-page {
+  min-height: 75vh;
+  padding: 60px 7%;
+  background: #0b0d12;
+  color: white;
+}
+
+.checkout-back {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff873b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-heading {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.checkout-heading > span {
+  color: #ff873b;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.checkout-heading h1 {
+  font-size: clamp(30px, 5vw, 42px);
+  margin: 15px 0;
+}
+
+.checkout-heading p {
+  color: #999;
+}
+
+.checkout-layout {
+  max-width: 1050px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.checkout-form-card,
+.checkout-summary {
+  background: #171b24;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #292f3a;
+}
+
+.checkout-form-card h2,
+.checkout-summary h2 {
+  margin-bottom: 25px;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #ff873b;
+  border-radius: 10px;
+  background: #25180f;
+  color: #ff873b;
+  margin-bottom: 30px;
+}
+
+.payment-method h3 {
+  color: white;
+}
+
+.payment-method p {
+  color: #aaa;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.checkout-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout-form-card label {
+  color: #ddd;
+}
+
+.checkout-form-card input {
+  padding: 16px;
+  background: #0b0d12;
+  border: 1px solid #343a45;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.checkout-form-card input:focus {
+  border-color: #ff873b;
+}
+
+.checkout-hint {
+  font-size: 12px;
+  color: #999;
+}
+
+.payment-security {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #8ed7a1;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.mpesa-button {
+  width: 100%;
+  padding: 17px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7929;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mpesa-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.payment-message {
+  padding: 12px;
+  border-radius: 8px;
+  background: #252b35;
+  color: #ffb078;
+  line-height: 1.5;
+}
+
+.checkout-product,
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.checkout-product span {
+  color: #aaa;
+}
+
+.checkout-total {
+  font-size: 18px;
+}
+
+.checkout-total strong {
+  color: #ff873b;
+}
+
+.checkout-summary hr {
+  border-color: #343a45;
+}
+
+@media (max-width: 750px) {
+  .checkout-page {
+    padding: 35px 15px;
+  }
+
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-form-card,
+  .checkout-summary {
+    padding: 22px;
+  }
+}
